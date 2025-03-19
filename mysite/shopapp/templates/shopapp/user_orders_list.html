@@ -1,0 +1,24 @@
+{% extends 'shopapp/base.html' %}
+{% load cache %}
+
+{% block title %}
+    User orders
+{% endblock %}
+
+{% block body %}
+    <h1>User orders: {{ owner.username }}</h1>
+    {% if orders %}
+        <h2>User {{ owner.username }} created the following orders:</h2>
+        {% cache 300 user_orders_owner owner.pk %}
+            <ul>
+                {% for order in orders %}
+                    <li>
+                        Order #{{ order.pk }} – Creation date: {{ order.created_at }}
+                    </li>
+                {% endfor %}
+            </ul>
+        {% endcache %}
+    {% else %}
+        <p>User {{ owner.username }} has no orders yet.</p>
+    {% endif %}
+{% endblock %}

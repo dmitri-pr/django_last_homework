@@ -1,0 +1,61 @@
+{% extends 'shopapp/base.html' %}
+{% load cache %}
+
+{% block title %}
+    Shop index
+{% endblock %}
+
+{% block body %}
+    <h1>Hello Shop index!</h1>
+
+    <h2>Available pages:</h2>
+    <ul>
+        {% for path, name in paths %}
+            <li>
+                <a href="{{ path }}">{{ name }}</a>
+            </li>
+        {% empty %}
+            <p>No url except index</p>
+        {% endfor %}
+    </ul>
+
+    <h2>Other information</h2>
+    <div>
+        <ul>
+            {% for name, price in products %}
+                <li>{{ name }} ({{ name|length }}) - ${{ price }}</li>
+                {% if name|length_is:'7' %}
+                    <span>Lucky product!</span>
+                {% endif %}
+            {% empty %}
+                <p>Nothing is here</p>
+            {% endfor %}
+        </ul>
+    </div>
+
+    <div>
+        <strong>
+            You have {{ items }} cherr{{ items|pluralize:'y,ies' }}
+        </strong>
+    </div>
+
+    <p>
+        Time running: {{ time_running }}
+    </p>
+
+    {% cache 100 lrm %}
+        <div>
+            {% lorem 2 p random %}
+        </div>
+    {% endcache %}
+
+    <p>
+        {{ cur_date|date:'SHORT_DATE_FORMAT' }}
+    </p>
+
+    <p>
+        {% now 'l' as current_day %}
+        {{ current_day }}
+    </p>
+
+{% endblock %}

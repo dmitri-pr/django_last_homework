@@ -1,0 +1,42 @@
+{% extends 'myauth/base.html' %}
+
+{% block title %}
+    {{ object.username }}'s Profile
+{% endblock %}
+
+{% block body %}
+    <h1>Profile of {{ object.username }}</h1>
+
+    {% if object.profile.avatar %}
+        <img src="{{ object.profile.avatar.url }}" alt="Avatar"/>
+    {% else %}
+        <p>No avatar uploaded.</p>
+    {% endif %}
+
+    <p>First Name: {{ object.first_name }}</p>
+    <p>Last Name: {{ object.last_name }}</p>
+    <p>Email: {{ object.email }}</p>
+    <p>Bio: {{ object.profile.bio }}</p>
+    <br>
+    {% if object.profile %}
+        {% if request.user.is_staff or request.user == object %}
+            <p>
+                <a href="{% url 'myauth:create-profile' user_id=object.pk %}">
+                    Update Profile
+                </a>
+            </p>
+        {% endif %}
+    {% else %}
+        {% if request.user.is_staff or request.user == object %}
+            <p>
+                <a href="{% url 'myauth:create-profile' user_id=object.pk %}">
+                    Create Profile
+                </a>
+            </p>
+        {% endif %}
+    {% endif %}
+    <p>
+        <a href="{% url 'myauth:user-list' %}">Back to users list</a>
+    </p>
+
+{% endblock %}

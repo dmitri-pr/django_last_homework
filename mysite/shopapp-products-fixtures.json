@@ -1,0 +1,198 @@
+[
+  {
+    "model": "shopapp.product",
+    "pk": 1,
+    "fields": {
+      "name": "Laptop",
+      "description": "",
+      "price": "1999.00",
+      "discount": 0,
+      "created_at": "2024-08-02T16:06:25.401Z",
+      "created_by": 1,
+      "archived": false,
+      "preview": ""
+    }
+  },
+  {
+    "model": "shopapp.product",
+    "pk": 2,
+    "fields": {
+      "name": "Desktop",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. A deserunt id in laborum natus quas tempora unde veniam? Cum labore maiores natus non obcaecati praesentium quasi. Aperiam dolores perspiciatis totam.",
+      "price": "2999.00",
+      "discount": 10,
+      "created_at": "2024-08-02T16:06:25.401Z",
+      "created_by": 1,
+      "archived": false,
+      "preview": ""
+    }
+  },
+  {
+    "model": "shopapp.product",
+    "pk": 3,
+    "fields": {
+      "name": "Smartphone",
+      "description": "Lorem ipsum dolor sit amet, consectetur",
+      "price": "995.00",
+      "discount": 25,
+      "created_at": "2024-08-02T16:06:25.401Z",
+      "created_by": 1,
+      "archived": false,
+      "preview": ""
+    }
+  },
+  {
+    "model": "shopapp.product",
+    "pk": 4,
+    "fields": {
+      "name": "Tablet",
+      "description": "Super tablet!",
+      "price": "1111.00",
+      "discount": 1,
+      "created_at": "2024-09-26T16:11:05.400Z",
+      "created_by": 1,
+      "archived": false,
+      "preview": ""
+    }
+  },
+  {
+    "model": "shopapp.product",
+    "pk": 5,
+    "fields": {
+      "name": "Mobile phone",
+      "description": "Mobile phone is worse than smartphone.\r\nThis is not a very great type of phone...",
+      "price": "222.00",
+      "discount": 0,
+      "created_at": "2024-09-27T08:56:58.605Z",
+      "created_by": 1,
+      "archived": false,
+      "preview": "products/product_5/preview/Mobile.jpeg"
+    }
+  },
+  {
+    "model": "shopapp.product",
+    "pk": 6,
+    "fields": {
+      "name": "iPhone",
+      "description": "It's a phone too...",
+      "price": "55555.00",
+      "discount": 25,
+      "created_at": "2024-09-27T16:27:50.263Z",
+      "created_by": 1,
+      "archived": false,
+      "preview": ""
+    }
+  },
+  {
+    "model": "shopapp.product",
+    "pk": 7,
+    "fields": {
+      "name": "SmartTablet",
+      "description": "A tablet of the future.",
+      "price": "1500.00",
+      "discount": 10,
+      "created_at": "2024-09-27T16:34:06.064Z",
+      "created_by": 1,
+      "archived": false,
+      "preview": ""
+    }
+  },
+  {
+    "model": "shopapp.product",
+    "pk": 9,
+    "fields": {
+      "name": "Stupidphone",
+      "description": "Just another stupid phone...",
+      "price": "333.00",
+      "discount": 55,
+      "created_at": "2024-10-16T03:43:59.083Z",
+      "created_by": 1,
+      "archived": true,
+      "preview": ""
+    }
+  },
+  {
+    "model": "shopapp.product",
+    "pk": 10,
+    "fields": {
+      "name": "Smartwatch",
+      "description": "This is not just a watch...",
+      "price": "555.00",
+      "discount": 5,
+      "created_at": "2024-10-23T16:43:42.013Z",
+      "created_by": 2,
+      "archived": false,
+      "preview": ""
+    }
+  },
+  {
+    "model": "shopapp.product",
+    "pk": 11,
+    "fields": {
+      "name": "Headphones",
+      "description": "New headphones",
+      "price": "500.00",
+      "discount": 5,
+      "created_at": "2024-12-13T09:05:45.843Z",
+      "created_by": 1,
+      "archived": false,
+      "preview": ""
+    }
+  },
+  {
+    "model": "shopapp.product",
+    "pk": 12,
+    "fields": {
+      "name": "Headphones",
+      "description": "Strange headphones",
+      "price": "400.00",
+      "discount": 6,
+      "created_at": "2024-12-13T09:07:17.488Z",
+      "created_by": 2,
+      "archived": false,
+      "preview": ""
+    }
+  },
+  {
+    "model": "shopapp.product",
+    "pk": 13,
+    "fields": {
+      "name": "Product1",
+      "description": "",
+      "price": "199.00",
+      "discount": 10,
+      "created_at": "2025-01-28T06:45:58.841Z",
+      "created_by": 1,
+      "archived": false,
+      "preview": ""
+    }
+  },
+  {
+    "model": "shopapp.product",
+    "pk": 14,
+    "fields": {
+      "name": "Product2",
+      "description": "",
+      "price": "299.00",
+      "discount": 10,
+      "created_at": "2025-01-28T06:45:58.841Z",
+      "created_by": 1,
+      "archived": false,
+      "preview": ""
+    }
+  },
+  {
+    "model": "shopapp.product",
+    "pk": 15,
+    "fields": {
+      "name": "Product3",
+      "description": "",
+      "price": "399.00",
+      "discount": 10,
+      "created_at": "2025-01-28T06:45:58.841Z",
+      "created_by": 1,
+      "archived": false,
+      "preview": ""
+    }
+  }
+]

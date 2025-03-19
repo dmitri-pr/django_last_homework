@@ -1,0 +1,60 @@
+{% extends 'shopapp/base.html' %}
+
+{% load i18n %}
+
+{% block title %}
+    {% translate 'Product #' %}{{ object.pk }}
+{% endblock %}
+
+{% block body %}
+    <h1>
+        {% translate 'Product' %} <strong>{{ object.name }}</strong>
+    </h1>
+    <div>
+        <p>{% translate 'Description' %}: {{ object.description }}</p>
+        <p>{% translate 'Price' %}: {{ object.price }}</p>
+        <p>{% translate 'Discount' %}: {{ object.discount }}</p>
+        <p>{% translate 'Archived' %}: {{ object.archived }}</p>
+        {% if object.preview %}
+            <img src="{{ object.preview.url }}" alt="{{ object.preview.name }}">
+        {% endif %}
+        <h3>{% translate 'Images' %}:</h3>
+        <div>
+            {% if object.images.all %}
+                <p>
+                    {% blocktranslate count images_count=object.images.all|length %}
+                        There is only one image.
+                        {% plural %}
+                        There are {{ images_count }} images.
+                    {% endblocktranslate %}
+                </p>
+            {% endif %}
+            {% for img in object.images.all %}
+                <img src="{{ img.image.url }}" alt="{{ img.image.name }}">
+                <p>{{ img.description }}</p>
+            {% empty %}
+                <p>{% translate 'No images uploaded yet' %}</p>
+            {% endfor %}
+        </div>
+    </div>
+    {% url 'shopapp:product_update' pk=object.pk as update_product_url %}
+    {% url 'shopapp:product_delete' pk=object.pk as delete_product_url %}
+    {% url 'shopapp:products_list' as products_list_url %}
+    {% blocktranslate %}
+        <p>
+            <a href="{{ update_product_url }}">
+                Update product
+            </a>
+        </p>
+        <p>
+            <a href="{{ delete_product_url }}">
+                Archive product
+            </a>
+        </p>
+        <p>
+            <a href="{{ products_list_url }}">
+                Back to products list
+            </a>
+        </p>
+    {% endblocktranslate %}
+{% endblock %}
