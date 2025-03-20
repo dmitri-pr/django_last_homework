@@ -4714,3 +4714,100 @@ django.db.utils.OperationalError: no such table: auth_group
 2025-03-20 06:29:51,862 [DEBUG] urllib3.connectionpool: Starting new HTTPS connection (1): o4508777353314304.ingest.de.sentry.io:443
 2025-03-20 06:29:52,328 [DEBUG] urllib3.connectionpool: https://o4508777353314304.ingest.de.sentry.io:443 "POST /api/4508777365962832/envelope/ HTTP/1.1" 200 0
 2025-03-20 06:30:52,138 [DEBUG] urllib3.connectionpool: https://o4508777353314304.ingest.de.sentry.io:443 "POST /api/4508777365962832/envelope/ HTTP/1.1" 200 0
+2025-03-20 06:35:13,835 [ERROR] django.request: Internal Server Error: /blog/articles/latest/feed/
+Traceback (most recent call last):
+  File "/home/dmitri/Documents/Skillbox/Django/Repository/django_last_homework/.venv/lib/python3.10/site-packages/django/db/backends/utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+  File "/home/dmitri/Documents/Skillbox/Django/Repository/django_last_homework/.venv/lib/python3.10/site-packages/django/db/backends/sqlite3/base.py", line 328, in execute
+    return super().execute(query, params)
+sqlite3.OperationalError: no such table: newblogapp_article
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/dmitri/Documents/Skillbox/Django/Repository/django_last_homework/.venv/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/dmitri/Documents/Skillbox/Django/Repository/django_last_homework/.venv/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/dmitri/Documents/Skillbox/Django/Repository/django_last_homework/.venv/lib/python3.10/site-packages/sentry_sdk/integrations/django/views.py", line 94, in sentry_wrapped_callback
+    return callback(request, *args, **kwargs)
+  File "/home/dmitri/Documents/Skillbox/Django/Repository/django_last_homework/.venv/lib/python3.10/site-packages/django/contrib/syndication/views.py", line 40, in __call__
+    feedgen = self.get_feed(obj, request)
+  File "/home/dmitri/Documents/Skillbox/Django/Repository/django_last_homework/.venv/lib/python3.10/site-packages/django/contrib/syndication/views.py", line 180, in get_feed
+    for item in self._get_dynamic_attr("items", obj):
+  File "/home/dmitri/Documents/Skillbox/Django/Repository/django_last_homework/.venv/lib/python3.10/site-packages/django/db/models/query.py", line 398, in __iter__
+    self._fetch_all()
+  File "/home/dmitri/Documents/Skillbox/Django/Repository/django_last_homework/.venv/lib/python3.10/site-packages/django/db/models/query.py", line 1881, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+  File "/home/dmitri/Documents/Skillbox/Django/Repository/django_last_homework/.venv/lib/python3.10/site-packages/django/db/models/query.py", line 91, in __iter__
+    results = compiler.execute_sql(
+  File "/home/dmitri/Documents/Skillbox/Django/Repository/django_last_homework/.venv/lib/python3.10/site-packages/django/db/models/sql/compiler.py", line 1562, in execute_sql
+    cursor.execute(sql, params)
+  File "/home/dmitri/Documents/Skillbox/Django/Repository/django_last_homework/.venv/lib/python3.10/site-packages/sentry_sdk/utils.py", line 1783, in runner
+    return sentry_patched_function(*args, **kwargs)
+  File "/home/dmitri/Documents/Skillbox/Django/Repository/django_last_homework/.venv/lib/python3.10/site-packages/sentry_sdk/integrations/django/__init__.py", line 651, in execute
+    result = real_execute(self, sql, params)
+  File "/home/dmitri/Documents/Skillbox/Django/Repository/django_last_homework/.venv/lib/python3.10/site-packages/django/db/backends/utils.py", line 67, in execute
+    return self._execute_with_wrappers(
+  File "/home/dmitri/Documents/Skillbox/Django/Repository/django_last_homework/.venv/lib/python3.10/site-packages/django/db/backends/utils.py", line 80, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "/home/dmitri/Documents/Skillbox/Django/Repository/django_last_homework/.venv/lib/python3.10/site-packages/django/db/backends/utils.py", line 84, in _execute
+    with self.db.wrap_database_errors:
+  File "/home/dmitri/Documents/Skillbox/Django/Repository/django_last_homework/.venv/lib/python3.10/site-packages/django/db/utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "/home/dmitri/Documents/Skillbox/Django/Repository/django_last_homework/.venv/lib/python3.10/site-packages/django/db/backends/utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+  File "/home/dmitri/Documents/Skillbox/Django/Repository/django_last_homework/.venv/lib/python3.10/site-packages/django/db/backends/sqlite3/base.py", line 328, in execute
+    return super().execute(query, params)
+django.db.utils.OperationalError: no such table: newblogapp_article
+2025-03-20 06:35:13,875 [ERROR] django.request: Internal Server Error: /en/shop/products/latest/feed/
+Traceback (most recent call last):
+  File "/home/dmitri/Documents/Skillbox/Django/Repository/django_last_homework/.venv/lib/python3.10/site-packages/django/db/backends/utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+  File "/home/dmitri/Documents/Skillbox/Django/Repository/django_last_homework/.venv/lib/python3.10/site-packages/django/db/backends/sqlite3/base.py", line 328, in execute
+    return super().execute(query, params)
+sqlite3.OperationalError: no such table: shopapp_product
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/dmitri/Documents/Skillbox/Django/Repository/django_last_homework/.venv/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/dmitri/Documents/Skillbox/Django/Repository/django_last_homework/.venv/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/dmitri/Documents/Skillbox/Django/Repository/django_last_homework/.venv/lib/python3.10/site-packages/sentry_sdk/integrations/django/views.py", line 94, in sentry_wrapped_callback
+    return callback(request, *args, **kwargs)
+  File "/home/dmitri/Documents/Skillbox/Django/Repository/django_last_homework/.venv/lib/python3.10/site-packages/django/contrib/syndication/views.py", line 40, in __call__
+    feedgen = self.get_feed(obj, request)
+  File "/home/dmitri/Documents/Skillbox/Django/Repository/django_last_homework/.venv/lib/python3.10/site-packages/django/contrib/syndication/views.py", line 180, in get_feed
+    for item in self._get_dynamic_attr("items", obj):
+  File "/home/dmitri/Documents/Skillbox/Django/Repository/django_last_homework/.venv/lib/python3.10/site-packages/django/db/models/query.py", line 398, in __iter__
+    self._fetch_all()
+  File "/home/dmitri/Documents/Skillbox/Django/Repository/django_last_homework/.venv/lib/python3.10/site-packages/django/db/models/query.py", line 1881, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+  File "/home/dmitri/Documents/Skillbox/Django/Repository/django_last_homework/.venv/lib/python3.10/site-packages/django/db/models/query.py", line 91, in __iter__
+    results = compiler.execute_sql(
+  File "/home/dmitri/Documents/Skillbox/Django/Repository/django_last_homework/.venv/lib/python3.10/site-packages/django/db/models/sql/compiler.py", line 1562, in execute_sql
+    cursor.execute(sql, params)
+  File "/home/dmitri/Documents/Skillbox/Django/Repository/django_last_homework/.venv/lib/python3.10/site-packages/sentry_sdk/utils.py", line 1783, in runner
+    return sentry_patched_function(*args, **kwargs)
+  File "/home/dmitri/Documents/Skillbox/Django/Repository/django_last_homework/.venv/lib/python3.10/site-packages/sentry_sdk/integrations/django/__init__.py", line 651, in execute
+    result = real_execute(self, sql, params)
+  File "/home/dmitri/Documents/Skillbox/Django/Repository/django_last_homework/.venv/lib/python3.10/site-packages/django/db/backends/utils.py", line 67, in execute
+    return self._execute_with_wrappers(
+  File "/home/dmitri/Documents/Skillbox/Django/Repository/django_last_homework/.venv/lib/python3.10/site-packages/django/db/backends/utils.py", line 80, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "/home/dmitri/Documents/Skillbox/Django/Repository/django_last_homework/.venv/lib/python3.10/site-packages/django/db/backends/utils.py", line 84, in _execute
+    with self.db.wrap_database_errors:
+  File "/home/dmitri/Documents/Skillbox/Django/Repository/django_last_homework/.venv/lib/python3.10/site-packages/django/db/utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "/home/dmitri/Documents/Skillbox/Django/Repository/django_last_homework/.venv/lib/python3.10/site-packages/django/db/backends/utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+  File "/home/dmitri/Documents/Skillbox/Django/Repository/django_last_homework/.venv/lib/python3.10/site-packages/django/db/backends/sqlite3/base.py", line 328, in execute
+    return super().execute(query, params)
+django.db.utils.OperationalError: no such table: shopapp_product
+2025-03-20 06:35:13,979 [DEBUG] urllib3.connectionpool: https://o4508777353314304.ingest.de.sentry.io:443 "POST /api/4508777365962832/envelope/ HTTP/1.1" 200 0
+2025-03-20 06:35:14,109 [DEBUG] urllib3.connectionpool: https://o4508777353314304.ingest.de.sentry.io:443 "POST /api/4508777365962832/envelope/ HTTP/1.1" 200 0
+2025-03-20 06:35:14,240 [DEBUG] urllib3.connectionpool: https://o4508777353314304.ingest.de.sentry.io:443 "POST /api/4508777365962832/envelope/ HTTP/1.1" 200 0
+2025-03-20 06:35:14,367 [DEBUG] urllib3.connectionpool: https://o4508777353314304.ingest.de.sentry.io:443 "POST /api/4508777365962832/envelope/ HTTP/1.1" 200 0
+2025-03-20 06:35:20,466 [DEBUG] urllib3.connectionpool: https://o4508777353314304.ingest.de.sentry.io:443 "POST /api/4508777365962832/envelope/ HTTP/1.1" 200 0
