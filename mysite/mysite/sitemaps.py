@@ -1,7 +1,5 @@
-from newblogapp.sitemap import BlogSitemap
-from shopapp.sitemap import ShopSitemap
+from blogapp.sitemap import BlogSitemap
 
 sitemaps = {
-    'newblog': BlogSitemap,
-    'products': ShopSitemap,
+    "blog": BlogSitemap,
 }

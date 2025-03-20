@@ -1,27 +1,23 @@
 from django.core.management import BaseCommand
+
 from shopapp.models import Product
 
 
 class Command(BaseCommand):
     """
-    Creating products
+    Creates products
     """
+
     def handle(self, *args, **options):
+        self.stdout.write("Create products")
 
-        self.stdout.write('Creating products')
-
-        product_names = [
-            'Laptop',
-            'Desktop',
-            'Smartphone'
+        products_names = [
+            "Laptop",
+            "Desktop",
+            "Smartphone",
         ]
-        for product_name in product_names:
-            product_creation = Product.objects.get_or_create(name=product_name)
-            if not product_creation[1]:
-                self.stdout.write(f'Product "{product_name}" already exists')
-            else:
-                self.stdout.write(
-                    self.style.SUCCESS(f'Created product {product_name}')
-                )
+        for products_name in products_names:
+            product, created = Product.objects.get_or_create(name=products_name)
+            self.stdout.write(f"Created product {product.name}")
 
-        self.stdout.write(self.style.SUCCESS('Products creation completed'))
+        self.stdout.write(self.style.SUCCESS("Products created"))

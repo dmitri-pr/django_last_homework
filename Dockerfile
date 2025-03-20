@@ -4,7 +4,7 @@ ENV PYTHONUNBUFFERED=1
 
 WORKDIR /app
 
-RUN pip install --upgrade pip "poetry==2.1.1"
+RUN pip install --upgrade pip "poetry==1.4.2"
 RUN poetry config virtualenvs.create false --local
 COPY pyproject.toml poetry.lock ./
 RUN poetry install --no-root
