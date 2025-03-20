@@ -4811,3 +4811,6 @@ django.db.utils.OperationalError: no such table: shopapp_product
 2025-03-20 06:35:14,240 [DEBUG] urllib3.connectionpool: https://o4508777353314304.ingest.de.sentry.io:443 "POST /api/4508777365962832/envelope/ HTTP/1.1" 200 0
 2025-03-20 06:35:14,367 [DEBUG] urllib3.connectionpool: https://o4508777353314304.ingest.de.sentry.io:443 "POST /api/4508777365962832/envelope/ HTTP/1.1" 200 0
 2025-03-20 06:35:20,466 [DEBUG] urllib3.connectionpool: https://o4508777353314304.ingest.de.sentry.io:443 "POST /api/4508777365962832/envelope/ HTTP/1.1" 200 0
+2025-03-20 08:39:17,486 [INFO] django.utils.autoreload: Watching for file changes with StatReloader
+2025-03-20 08:41:22,272 [DEBUG] urllib3.connectionpool: Starting new HTTPS connection (1): o4508777353314304.ingest.de.sentry.io:443
+2025-03-20 08:41:22,739 [DEBUG] urllib3.connectionpool: https://o4508777353314304.ingest.de.sentry.io:443 "POST /api/4508777365962832/envelope/ HTTP/1.1" 200 0
